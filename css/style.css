@@ -222,7 +222,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    max-height: 340px;
+    max-height: 540px;
     overflow-y: auto;
     padding-right: 4px;
 }
