@@ -7,9 +7,9 @@ const DEFAULT_DATA = {
     categories: [
         {
             id: 'cat-1',
-            name: '常用网站',
+            name: '社区资讯',
             sites: [
-                { id: 's1', name: '百度', url: 'https://www.baidu.com', icon: '' },
+                { id: 's1', name: 'chiphell', url: 'https://www.chiphell.com', icon: '' },
                 { id: 's2', name: 'Google', url: 'https://www.google.com', icon: '' },
                 { id: 's3', name: 'Bing', url: 'https://www.bing.com', icon: '' },
                 { id: 's4', name: 'GitHub', url: 'https://github.com', icon: '' },
@@ -23,7 +23,7 @@ const DEFAULT_DATA = {
         },
         {
             id: 'cat-2',
-            name: '社区资讯',
+            name: '常用网站',
             sites: [
                 { id: 's11', name: 'Reddit', url: 'https://www.reddit.com', icon: '' },
                 { id: 's12', name: 'V2EX', url: 'https://www.v2ex.com', icon: '' },
@@ -39,7 +39,7 @@ const DEFAULT_DATA = {
         },
         {
             id: 'cat-3',
-            name: '学习教程',
+            name: '生活服务',
             sites: [
                 { id: 's21', name: 'MDN Web Docs', url: 'https://developer.mozilla.org', icon: '' },
                 { id: 's22', name: 'W3School', url: 'https://www.w3schools.com', icon: '' },
@@ -55,7 +55,7 @@ const DEFAULT_DATA = {
         },
         {
             id: 'cat-4',
-            name: '生活 · 其他',
+            name: '其他网站',
             sites: [
                 { id: 's31', name: '淘宝', url: 'https://www.taobao.com', icon: '' },
                 { id: 's32', name: '京东', url: 'https://www.jd.com', icon: '' },
