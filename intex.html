@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>清新导航 · 网址之家</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+<body>
+
+<!-- ========== 顶部工具栏 ========== -->
+<div class="topbar">
+    <div class="container topbar-inner">
+        <div class="topbar-left">
+            <a href="#">设为主页</a>
+            <a href="#">加入收藏</a>
+        </div>
+        <div class="topbar-center" id="topDate">2026年8月25日 星期二 15:50</div>
+        <div class="topbar-right">
+            <a href="#">个性设置</a>
+            <a href="#">意见反馈</a>
+        </div>
+    </div>
+</div>
+
+<!-- ========== 主头部（Logo + 天气 + 邮箱登录） ========== -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">清新导航</span>
+        </div>
+        <div class="header-weather">
+            <span>📍 连江</span>
+            <span>空气质量 优</span>
+            <span>25~28℃</span>
+        </div>
+        <div class="header-login">
+            <input type="text" placeholder="邮箱" />
+            <input type="password" placeholder="密码" />
+            <button>登录</button>
+        </div>
+    </div>
+</header>
+
+<!-- ========== 搜索区域 ========== -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-box">
+            <!-- 搜索类型标签（装饰） -->
+            <div class="search-tags">
+                <span class="active">网页</span>
+                <span>MP3</span>
+                <span>视频</span>
+                <span>图片</span>
+                <span>贴吧</span>
+                <span>知道</span>
+                <span>新闻</span>
+                <span>地图</span>
+                <span>更多</span>
+            </div>
+
+            <!-- 双引擎切换 -->
+            <div class="search-tabs">
+                <button class="search-tab active" data-engine="baidu">百度</button>
+                <button class="search-tab" data-engine="google">Google</button>
+            </div>
+
+            <!-- 搜索表单 -->
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索你想要的…" autofocus />
+                <button type="submit" class="search-btn">百度一下</button>
+            </form>
+
+            <!-- 热门搜索词 -->
+            <div class="search-hot">
+                <span>🔥 热门：</span>
+                <a href="https://www.baidu.com/s?wd=中国空军赴埃及训练有何影响" target="_blank">中国空军赴埃及训练有何影响</a>
+            </div>
+
+            <!-- ★★★ 收藏网站（自定义部分） ★★★ -->
+            <div class="favorite-sites">
+                <span>收藏网站：</span>
+                <!-- 在这里添加或删除收藏链接，每个 <a> 代表一个网站 -->
+                <a href="https://www.jd.com" target="_blank">京东商城</a>
+                <a href="https://www.taobao.com" target="_blank">淘宝网</a>
+                <a href="https://www.chiphell.com" target="_blank">chiphell</a>
+                <a href="https://www.bilibili.com" target="_blank">B站</a>
+                <a href="https://www.zhihu.com" target="_blank">知乎</a>
+                <!-- 您可以继续添加更多 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== 分类导航卡片 ========== -->
+<main class="main">
+    <div class="container">
+        <div class="categories">
+            <!-- 以下8个卡片，内容与之前一致，您可增删修改 -->
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">🛠️</span>
+                    <h2 class="category-title">常用工具</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://www.baidu.com" target="_blank">百度</a></li>
+                    <li><a href="https://www.google.com" target="_blank">Google</a></li>
+                    <li><a href="https://www.zhihu.com" target="_blank">知乎</a></li>
+                    <li><a href="https://www.douban.com" target="_blank">豆瓣</a></li>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.bing.com" target="_blank">Bing</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">💬</span>
+                    <h2 class="category-title">社交媒体</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://weibo.com" target="_blank">微博</a></li>
+                    <li><a href="https://www.qq.com" target="_blank">QQ</a></li>
+                    <li><a href="https://www.douyin.com" target="_blank">抖音</a></li>
+                    <li><a href="https://www.xiaohongshu.com" target="_blank">小红书</a></li>
+                    <li><a href="https://www.weixin.qq.com" target="_blank">微信</a></li>
+                    <li><a href="https://www.bilibili.com" target="_blank">B站</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">🎬</span>
+                    <h2 class="category-title">视频娱乐</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a></li>
+                    <li><a href="https://www.iqiyi.com" target="_blank">爱奇艺</a></li>
+                    <li><a href="https://v.qq.com" target="_blank">腾讯视频</a></li>
+                    <li><a href="https://www.youku.com" target="_blank">优酷</a></li>
+                    <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.mgtv.com" target="_blank">芒果TV</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">📰</span>
+                    <h2 class="category-title">新闻资讯</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://news.sina.com.cn" target="_blank">新浪新闻</a></li>
+                    <li><a href="https://news.163.com" target="_blank">网易新闻</a></li>
+                    <li><a href="https://news.qq.com" target="_blank">腾讯新闻</a></li>
+                    <li><a href="https://www.toutiao.com" target="_blank">今日头条</a></li>
+                    <li><a href="https://www.thepaper.cn" target="_blank">澎湃新闻</a></li>
+                    <li><a href="https://www.caixin.com" target="_blank">财新网</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">🛒</span>
+                    <h2 class="category-title">购物生活</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://www.taobao.com" target="_blank">淘宝</a></li>
+                    <li><a href="https://www.jd.com" target="_blank">京东</a></li>
+                    <li><a href="https://www.pinduoduo.com" target="_blank">拼多多</a></li>
+                    <li><a href="https://www.meituan.com" target="_blank">美团</a></li>
+                    <li><a href="https://www.ele.me" target="_blank">饿了么</a></li>
+                    <li><a href="https://www.suning.com" target="_blank">苏宁易购</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">📚</span>
+                    <h2 class="category-title">学习办公</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://www.wps.cn" target="_blank">WPS Office</a></li>
+                    <li><a href="https://wenku.baidu.com" target="_blank">百度文库</a></li>
+                    <li><a href="https://www.csdn.net" target="_blank">CSDN</a></li>
+                    <li><a href="https://www.jianshu.com" target="_blank">简书</a></li>
+                    <li><a href="https://www.icourse163.org" target="_blank">中国大学MOOC</a></li>
+                    <li><a href="https://www.runoob.com" target="_blank">菜鸟教程</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">💰</span>
+                    <h2 class="category-title">金融理财</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://www.eastmoney.com" target="_blank">东方财富</a></li>
+                    <li><a href="https://www.sse.com.cn" target="_blank">上交所</a></li>
+                    <li><a href="https://www.szse.cn" target="_blank">深交所</a></li>
+                    <li><a href="https://www.jrj.com.cn" target="_blank">金融界</a></li>
+                    <li><a href="https://www.cnstock.com" target="_blank">中国证券网</a></li>
+                    <li><a href="https://www.hexun.com" target="_blank">和讯网</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">🏠</span>
+                    <h2 class="category-title">生活服务</h2>
+                </div>
+                <ul class="category-links">
+                    <li><a href="https://www.12306.cn" target="_blank">铁路12306</a></li>
+                    <li><a href="https://www.ctrip.com" target="_blank">携程旅行</a></li>
+                    <li><a href="https://www.qunar.com" target="_blank">去哪儿</a></li>
+                    <li><a href="https://www.dianping.com" target="_blank">大众点评</a></li>
+                    <li><a href="https://www.58.com" target="_blank">58同城</a></li>
+                    <li><a href="https://www.ganji.com" target="_blank">赶集网</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ========== 底部 ========== -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">
+            🌿 清新导航 · 始于简洁，忠于便捷 &nbsp;|&nbsp; <span id="footerYear"></span>
+        </p>
+        <p class="footer-meta">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            &nbsp;·&nbsp;
+            <a href="#" id="backTop">返回顶部 ↑</a>
+        </p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
