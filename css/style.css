@@ -10,7 +10,7 @@ body {
     background: #f1f8e9;  /* 淡绿色背景 */
     color: #2e3b2e;
     line-height: 1.6;
-    max-width: 1100px;        /* ← 控制整体宽度，可调小如 900px */
+    max-width: 1200px;        /* ← 控制整体宽度，可调小如 900px */
     margin: 0 auto;           /* 居中 */
     padding: 20px;
     min-height: 100vh;
