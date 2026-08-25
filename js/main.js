@@ -2,12 +2,21 @@
     'use strict';
 
     function updateClock() {
-        const now = new Date();
-        const h = String(now.getHours()).padStart(2, '0');
-        const m = String(now.getMinutes()).padStart(2, '0');
-        const s = String(now.getSeconds()).padStart(2, '0');
-        document.getElementById('datetime').textContent = `${h}:${m}:${s}`;
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('datetime').textContent = `${h}:${m}:${s}`;
+    // 更新顶部日期（如果存在）
+    const topDate = document.getElementById('topDate');
+    if (topDate) {
+        const year = now.getFullYear();
+        const month = String(now.getMonth()+1).padStart(2,'0');
+        const day = String(now.getDate()).padStart(2,'0');
+        // 简单格式，您可自行扩展天干地支
+        topDate.textContent = `${year}年${month}月${day}日 星期${'日一二三四五六'[now.getDay()]} ${h}:${m}`;
     }
+}
     updateClock();
     setInterval(updateClock, 1000);
 
