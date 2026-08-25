@@ -1,10 +1,8 @@
 // ============================================================
-// 数据管理
+// 数据层（预设 40 个不重复的常用网站，分属四个分类）
 // ============================================================
-
 const STORAGE_KEY = 'navData';
 
-// 默认预设数据（四个分类，每个分类10个网站）
 const DEFAULT_DATA = {
     categories: [
         {
@@ -17,10 +15,10 @@ const DEFAULT_DATA = {
                 { id: 's4', name: 'GitHub', url: 'https://github.com', icon: '' },
                 { id: 's5', name: 'Stack Overflow', url: 'https://stackoverflow.com', icon: '' },
                 { id: 's6', name: '知乎', url: 'https://www.zhihu.com', icon: '' },
-                { id: 's7', name: '豆瓣', url: 'https://www.douban.com', icon: '' },
-                { id: 's8', name: '微博', url: 'https://weibo.com', icon: '' },
-                { id: 's9', name: '腾讯网', url: 'https://www.qq.com', icon: '' },
-                { id: 's10', name: '网易', url: 'https://www.163.com', icon: '' }
+                { id: 's7', name: '微博', url: 'https://weibo.com', icon: '' },
+                { id: 's8', name: '腾讯网', url: 'https://www.qq.com', icon: '' },
+                { id: 's9', name: '网易', url: 'https://www.163.com', icon: '' },
+                { id: 's10', name: '搜狐', url: 'https://www.sohu.com', icon: '' }
             ]
         },
         {
@@ -32,11 +30,11 @@ const DEFAULT_DATA = {
                 { id: 's13', name: '掘金', url: 'https://juejin.cn', icon: '' },
                 { id: 's14', name: 'CSDN', url: 'https://www.csdn.net', icon: '' },
                 { id: 's15', name: '思否', url: 'https://segmentfault.com', icon: '' },
-                { id: 's16', name: '知乎', url: 'https://www.zhihu.com', icon: '' },
-                { id: 's17', name: '豆瓣小组', url: 'https://www.douban.com/group', icon: '' },
-                { id: 's18', name: '贴吧', url: 'https://tieba.baidu.com', icon: '' },
-                { id: 's19', name: '天涯', url: 'https://www.tianya.cn', icon: '' },
-                { id: 's20', name: '猫扑', url: 'https://www.mop.com', icon: '' }
+                { id: 's16', name: '少数派', url: 'https://sspai.com', icon: '' },
+                { id: 's17', name: '品玩', url: 'https://www.pingwest.com', icon: '' },
+                { id: 's18', name: '虎嗅', url: 'https://www.huxiu.com', icon: '' },
+                { id: 's19', name: '36氪', url: 'https://36kr.com', icon: '' },
+                { id: 's20', name: 'IT之家', url: 'https://www.ithome.com', icon: '' }
             ]
         },
         {
@@ -57,7 +55,7 @@ const DEFAULT_DATA = {
         },
         {
             id: 'cat-4',
-            name: '其他网站',
+            name: '生活 · 其他',
             sites: [
                 { id: 's31', name: '淘宝', url: 'https://www.taobao.com', icon: '' },
                 { id: 's32', name: '京东', url: 'https://www.jd.com', icon: '' },
@@ -67,78 +65,64 @@ const DEFAULT_DATA = {
                 { id: 's36', name: '饿了么', url: 'https://www.ele.me', icon: '' },
                 { id: 's37', name: '携程', url: 'https://www.ctrip.com', icon: '' },
                 { id: 's38', name: '马蜂窝', url: 'https://www.mafengwo.cn', icon: '' },
-                { id: 's39', name: '知乎', url: 'https://www.zhihu.com', icon: '' },
-                { id: 's40', name: '豆瓣', url: 'https://www.douban.com', icon: '' }
+                { id: 's39', name: '抖音', url: 'https://www.douyin.com', icon: '' },
+                { id: 's40', name: '小红书', url: 'https://www.xiaohongshu.com', icon: '' }
             ]
         }
     ]
 };
 
-// 当前数据
 let navData = null;
-
-// 当前删除的目标 { categoryId, siteId }
 let deleteTarget = null;
 
-// ============================================================
-// 工具函数
-// ============================================================
-
-// 生成短 ID
 function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 }
 
-// 获取网站的显示图标（如果用户自定义了则用自定义，否则尝试 favicon）
 function getSiteIconHTML(site) {
     if (site.icon && site.icon.trim() !== '') {
-        // 如果是 emoji 或文字，直接显示
         return `<span class="site-icon">${site.icon.trim()}</span>`;
     } else {
-        // 尝试从网址获取 favicon
-        const domain = new URL(site.url).origin;
-        const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-        return `<span class="site-icon"><img src="${faviconUrl}" alt="icon" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='🌐'" /></span>`;
+        try {
+            const url = new URL(site.url);
+            const domain = url.origin;
+            const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+            return `<span class="site-icon"><img src="${faviconUrl}" alt="icon" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='🌐'" /></span>`;
+        } catch {
+            return `<span class="site-icon">🌐</span>`;
+        }
     }
 }
 
-// 加载数据（从 localStorage 或默认）
 function loadData() {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
         try {
             navData = JSON.parse(stored);
-            // 确保每个分类有 sites 数组
-            navData.categories.forEach(cat => {
-                if (!cat.sites) cat.sites = [];
-            });
+            navData.categories.forEach(cat => { if (!cat.sites) cat.sites = []; });
             return;
         } catch (e) {
             console.warn('数据解析失败，使用默认数据');
         }
     }
-    // 首次使用，写入默认数据
     navData = JSON.parse(JSON.stringify(DEFAULT_DATA));
     saveData();
 }
 
-// 保存数据到 localStorage
 function saveData() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(navData));
 }
 
 // ============================================================
-// 渲染函数
+// 渲染
 // ============================================================
-
 function render() {
     const container = document.getElementById('categoriesContainer');
     if (!container) return;
 
     let html = '';
-    navData.categories.forEach((category, catIndex) => {
+    navData.categories.forEach(category => {
         const sites = category.sites || [];
-        // 限制每个分类最多10个（但用户可编辑，我们不做强制，但UI添加时限制）
         const siteItems = sites.map(site => {
             const iconHtml = getSiteIconHTML(site);
             return `
@@ -157,12 +141,6 @@ function render() {
             `;
         }).join('');
 
-        const addBtnHtml = `
-            <button class="btn-add" data-category-id="${category.id}">
-                <i class="fas fa-plus-circle"></i> 添加
-            </button>
-        `;
-
         html += `
             <div class="category-card" data-category-id="${category.id}">
                 <div class="category-header">
@@ -170,7 +148,9 @@ function render() {
                         <i class="fas fa-folder-open" style="color: #66bb6a;"></i> ${category.name}
                     </span>
                     <div class="category-actions">
-                        ${addBtnHtml}
+                        <button class="btn-add" data-category-id="${category.id}">
+                            <i class="fas fa-plus-circle"></i> 添加
+                        </button>
                     </div>
                 </div>
                 <div class="site-list">
@@ -181,39 +161,30 @@ function render() {
     });
 
     container.innerHTML = html;
-
-    // 重新绑定事件（委托方式也可以，但这里直接绑定）
     attachEvents();
 }
 
 // ============================================================
-// 事件绑定（部分使用委托）
+// 事件绑定（委托）
 // ============================================================
-
 function attachEvents() {
     const container = document.getElementById('categoriesContainer');
 
-    // 使用事件委托监听 添加、编辑、删除 按钮
     container.addEventListener('click', function(e) {
         const target = e.target.closest('button');
         if (!target) return;
 
-        // 添加按钮
         if (target.classList.contains('btn-add')) {
             const categoryId = target.dataset.categoryId;
             openAddModal(categoryId);
             return;
         }
-
-        // 编辑按钮
         if (target.classList.contains('btn-edit')) {
             const categoryId = target.dataset.categoryId;
             const siteId = target.dataset.siteId;
             openEditModal(categoryId, siteId);
             return;
         }
-
-        // 删除按钮
         if (target.classList.contains('btn-delete')) {
             const categoryId = target.dataset.categoryId;
             const siteId = target.dataset.siteId;
@@ -222,11 +193,10 @@ function attachEvents() {
         }
     });
 
-    // 网站卡片点击跳转（仅点击卡片主体，不包含按钮区域）
+    // 点击卡片主体跳转（排除按钮区域）
     container.addEventListener('click', function(e) {
         const item = e.target.closest('.site-item');
         if (!item) return;
-        // 如果点击的是按钮区域，则不跳转
         if (e.target.closest('.site-actions')) return;
         const categoryId = item.dataset.categoryId;
         const siteId = item.dataset.siteId;
@@ -240,9 +210,8 @@ function attachEvents() {
 }
 
 // ============================================================
-// 模态框逻辑（添加 / 编辑）
+// 模态框（添加 / 编辑）
 // ============================================================
-
 const siteModal = document.getElementById('siteModal');
 const modalTitle = document.getElementById('modalTitle');
 const siteForm = document.getElementById('siteForm');
@@ -251,7 +220,6 @@ const editSiteId = document.getElementById('editSiteId');
 const siteName = document.getElementById('siteName');
 const siteUrl = document.getElementById('siteUrl');
 const siteIcon = document.getElementById('siteIcon');
-
 let isEditMode = false;
 
 function openAddModal(categoryId) {
@@ -260,9 +228,6 @@ function openAddModal(categoryId) {
     editCategoryId.value = categoryId;
     editSiteId.value = '';
     siteForm.reset();
-    siteName.value = '';
-    siteUrl.value = '';
-    siteIcon.value = '';
     siteModal.classList.add('active');
 }
 
@@ -276,11 +241,9 @@ function openEditModal(categoryId, siteId) {
     if (!category) return;
     const site = category.sites.find(s => s.id === siteId);
     if (!site) return;
-
     siteName.value = site.name || '';
     siteUrl.value = site.url || '';
     siteIcon.value = site.icon || '';
-
     siteModal.classList.add('active');
 }
 
@@ -288,10 +251,8 @@ function closeModal() {
     siteModal.classList.remove('active');
 }
 
-// 提交表单
 siteForm.addEventListener('submit', function(e) {
     e.preventDefault();
-
     const categoryId = editCategoryId.value;
     const siteId = editSiteId.value;
     const name = siteName.value.trim();
@@ -307,7 +268,6 @@ siteForm.addEventListener('submit', function(e) {
     if (!category) return;
 
     if (isEditMode) {
-        // 编辑
         const site = category.sites.find(s => s.id === siteId);
         if (site) {
             site.name = name;
@@ -315,18 +275,11 @@ siteForm.addEventListener('submit', function(e) {
             site.icon = icon;
         }
     } else {
-        // 添加 - 限制每个分类最多10个
         if (category.sites.length >= 10) {
             alert('每个分类最多只能添加 10 个网站！');
             return;
         }
-        const newSite = {
-            id: generateId(),
-            name: name,
-            url: url,
-            icon: icon
-        };
-        category.sites.push(newSite);
+        category.sites.push({ id: generateId(), name, url, icon });
     }
 
     saveData();
@@ -334,21 +287,17 @@ siteForm.addEventListener('submit', function(e) {
     closeModal();
 });
 
-// 取消 / 关闭
 document.getElementById('modalCancel').addEventListener('click', closeModal);
 document.getElementById('modalClose').addEventListener('click', closeModal);
-// 点击模态背景关闭
 siteModal.addEventListener('click', function(e) {
     if (e.target === siteModal) closeModal();
 });
 
 // ============================================================
-// 删除确认模态框
+// 删除确认
 // ============================================================
-
 const deleteModal = document.getElementById('deleteModal');
 const deleteConfirmMsg = document.getElementById('deleteConfirmMsg');
-const deleteConfirmBtn = document.getElementById('deleteConfirm');
 
 function openDeleteModal(categoryId, siteId) {
     deleteTarget = { categoryId, siteId };
@@ -365,7 +314,7 @@ function closeDeleteModal() {
     deleteTarget = null;
 }
 
-deleteConfirmBtn.addEventListener('click', function() {
+document.getElementById('deleteConfirm').addEventListener('click', function() {
     if (!deleteTarget) return;
     const { categoryId, siteId } = deleteTarget;
     const category = navData.categories.find(c => c.id === categoryId);
@@ -384,14 +333,11 @@ deleteModal.addEventListener('click', function(e) {
 });
 
 // ============================================================
-// 搜索引擎功能
+// 搜索引擎
 // ============================================================
-
 document.getElementById('baiduBtn').addEventListener('click', function() {
     const query = document.getElementById('baiduInput').value.trim();
-    if (query) {
-        window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(query)}`, '_blank');
-    }
+    if (query) window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(query)}`, '_blank');
 });
 document.getElementById('baiduInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') document.getElementById('baiduBtn').click();
@@ -399,17 +345,14 @@ document.getElementById('baiduInput').addEventListener('keypress', function(e) {
 
 document.getElementById('googleBtn').addEventListener('click', function() {
     const query = document.getElementById('googleInput').value.trim();
-    if (query) {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-    }
+    if (query) window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
 });
 document.getElementById('googleInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') document.getElementById('googleBtn').click();
 });
 
 // ============================================================
-// 初始化
+// 启动
 // ============================================================
-
 loadData();
 render();
