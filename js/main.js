@@ -60,7 +60,7 @@ const DEFAULT_DATA = {
                 { id: 's31', name: '12306', url: 'https://www.12306.com', icon: '' },
                 { id: 's32', name: 'cloudflare', url: 'https://dash.cloudflare.com/', icon: '' },
                 { id: 's33', name: 'softoroom', url: 'https://softoroom.org/', icon: '' },
-                { id: 's34', name: '拼多多', url: 'https://www.pinduoduo.com', icon: '' },
+                { id: 's34', name: 'officeplus', url: 'https://www.officeplus.cn', icon: '' },
                 { id: 's35', name: '美团', url: 'https://www.meituan.com', icon: '' },
                 { id: 's36', name: '饿了么', url: 'https://www.ele.me', icon: '' },
                 { id: 's37', name: '携程', url: 'https://www.ctrip.com', icon: '' },
