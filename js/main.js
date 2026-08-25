@@ -27,7 +27,7 @@ const DEFAULT_DATA = {
             sites: [
                 { id: 's11', name: 'youtube', url: 'https://www.youtube.com', icon: '' },
                 { id: 's12', name: '哔哩哔哩', url: 'https://www.bilibili.com', icon: '' },
-                { id: 's13', name: 'deepseek', url: 'https://chat.deepseek.com/', icon: '' },
+                { id: 's13', name: 'deepseek', url: 'https://chat.deepseek.com', icon: '' },
                 { id: 's14', name: 'CSDN', url: 'https://www.csdn.net', icon: '' },
                 { id: 's15', name: '思否', url: 'https://segmentfault.com', icon: '' },
                 { id: 's16', name: '少数派', url: 'https://sspai.com', icon: '' },
