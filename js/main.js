@@ -57,7 +57,7 @@ const DEFAULT_DATA = {
             id: 'cat-4',
             name: '其他网站',
             sites: [
-                { id: 's31', name: '12306', url: 'https://www.12306.cn', icon: '' },
+                { id: 's31', name: '中国铁路12306', url: 'https://www.12306.cn', icon: '' },
                 { id: 's32', name: 'cloudflare', url: 'https://dash.cloudflare.com/', icon: '' },
                 { id: 's33', name: 'softoroom', url: 'https://softoroom.org/', icon: '' },
                 { id: 's34', name: 'officeplus', url: 'https://www.officeplus.cn', icon: '' },
