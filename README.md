@@ -1,47 +1,54 @@
-# 网址之家 🏠
 
-一个简洁优雅的网址导航网站，帮助用户高效管理常用网站。支持分类浏览、实时搜索、自定义添加/编辑/删除网址，并内置明暗主题切换。
+---
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+## 🚀 快速上手
 
-## ✨ 功能特性
+### 方式一：直接运行（本地预览）
+1. 克隆或下载本项目到本地。
+2. 双击 `index.html` 即可在浏览器中打开使用。
 
-- **分类导航**：预置常用推荐、搜索引擎、社交网络、视频娱乐、购物消费、学习教育、开发工具、设计资源、效率工具、AI 工具等多个分类。
-- **实时搜索**：支持按名称、描述、URL、分类快速筛选，快捷键 `Ctrl+K` 或 `/` 即可聚焦搜索框。
-- **自定义管理**：用户可添加自己的网址，支持编辑和删除，数据保存在浏览器 `localStorage` 中，刷新不丢失。
-- **明暗主题**：一键切换亮色/暗色模式，自动记忆用户偏好。
-- **响应式设计**：完美适配桌面端和移动端，卡片式布局清晰美观。
-- **零依赖**：纯原生 HTML/CSS/JS 实现，无需任何框架或构建工具。
+### 方式二：部署到 GitHub Pages
+1. 将项目推送到 GitHub 仓库。
+2. 进入仓库 `Settings` → `Pages`，选择 `main` 分支作为源。
+3. 等待片刻，访问 `https://你的用户名.github.io/仓库名` 即可。
 
-## 🌐 在线演示
+### 方式三：自定义域名（可选）
+在仓库 `Settings` → `Pages` 中绑定自己的域名，并添加 CNAME 记录即可。
 
-你可以直接访问以下地址查看效果：
+---
 
-👉 **[https://wuzhonghai.github.io/url-home/](https://wuhzonghai.github.io/url-home/)**
+## 🛠️ 自定义指南
 
-> 如果没有开启 GitHub Pages，请参考 [部署说明](#部署到-github-pages) 部分。
+你可以轻松修改导航内容：
 
-## 🛠 技术栈
+### 修改网址分类或链接
+编辑 `index.html` 中的 `<div class="nav-section">` 区块，按照现有的结构增删或修改 `<a class="site-item">` 链接。
 
-- HTML5
-- CSS3（CSS 变量、Flexbox/Grid、过渡动画）
-- JavaScript（ES6+，LocalStorage）
+### 更换搜索引擎
+- 在 `script.js` 的 `ENGINES` 对象中添加或修改搜索引擎配置（url、queryParam）。
+- 在 `index.html` 的 `.search-tabs` 中添加对应的标签（`data-engine` 需与配置键一致）。
 
-## 🚀 本地运行
+### 调整样式
+所有样式集中在 `style.css` 中，你可以自由修改配色、字体、间距等，无需担心影响逻辑。
 
-无需安装任何依赖，直接打开 `index.html` 即可使用。
+---
 
-```bash
-# 克隆仓库
-git clone https://github.com/你的用户名/仓库名.git
+## 📄 许可证
 
-# 进入项目目录
-cd 仓库名
+本项目采用 **MIT License**，你可以自由使用、修改、分发，包括商业用途。详情请见 [LICENSE](LICENSE) 文件（如未附带，则默认遵循 MIT）。
 
-# 直接用浏览器打开 index.html
-# 或者使用简单的静态服务器（可选）
-python -m http.server 8000
-# 然后访问 http://localhost:8000
+---
+
+## 🤝 贡献
+
+欢迎提交 Issue 或 Pull Request，让这个导航页变得更好！
+
+---
+
+## 💬 反馈
+
+如果你有任何建议或问题，请通过 GitHub Issues 提出，或发送邮件至 [你的邮箱]。
+
+---
+
+**Enjoy your browsing!** 🚀
