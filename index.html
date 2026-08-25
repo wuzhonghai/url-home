@@ -11,15 +11,81 @@
 <body>
     <!-- 顶部导航 -->
     <header class="header">
-        <div class="container header-inner">
-            <div class="logo">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">清新导航</span>
+       <div class="topbar">
+    <div class="container topbar-inner">
+        <div class="topbar-left">
+            <a href="#">设为主页</a>
+            <a href="#">加入收藏</a>
+        </div>
+        <div class="topbar-center" id="topDate">2026年8月25日 丙午年 七月十三 星期二 15:50</div>
+        <div class="topbar-right">
+            <a href="#">个性设置</a>
+            <a href="#">意见反馈</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主头部（Logo + 天气 + 邮箱） ===== -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">清新导航</span>
+        </div>
+        <div class="header-weather">
+            <span>📍 连江</span>
+            <span>空气质量 优</span>
+            <span>25~28℃</span>
+        </div>
+        <div class="header-login">
+            <input type="text" placeholder="邮箱" />
+            <input type="password" placeholder="密码" />
+            <button>登录</button>
+        </div>
+    </div>
+</header>
+
+<!-- ===== 搜索区域（带更多标签） ===== -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-box">
+            <!-- 搜索类型标签（可隐藏，但为仿hao268可保留） -->
+            <div class="search-tags">
+                <span class="active">网页</span>
+                <span>MP3</span>
+                <span>视频</span>
+                <span>图片</span>
+                <span>贴吧</span>
+                <span>知道</span>
+                <span>新闻</span>
+                <span>地图</span>
+                <span>更多</span>
             </div>
-            <div class="header-right">
-                <span class="datetime" id="datetime">--:--:--</span>
+            <!-- 双引擎搜索表单（保留） -->
+            <div class="search-tabs">
+                <button class="search-tab active" data-engine="baidu">百度</button>
+                <button class="search-tab" data-engine="google">Google</button>
+            </div>
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索你想要的…" autofocus />
+                <button type="submit" class="search-btn">百度一下</button>
+            </form>
+            <!-- 热门搜索词（保留） -->
+            <div class="search-hot">
+                <span>🔥 热门：</span>
+                <a href="https://www.baidu.com/s?wd=中国空军赴埃及训练有何影响" target="_blank">中国空军赴埃及训练有何影响</a>
+            </div>
+            <!-- ★★★ 新增：收藏网站横条 ★★★ -->
+            <div class="favorite-sites">
+                <span>收藏网站：</span>
+                <a href="https://www.jd.com" target="_blank">京东商城</a>
+                <a href="https://www.taobao.com" target="_blank">淘宝网</a>
+                <a href="https://www.chiphell.com" target="_blank">chiphell</a>
+                <!-- 您可以增删更多 -->
             </div>
         </div>
+    </div>
+</section>
     </header>
 
     <!-- 搜索区域 -->
