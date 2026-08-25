@@ -3,250 +3,133 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>清新导航 · 网址之家</title>
-    <!-- 正确引用 CSS -->
+    <title>我的导航 · 美好的一天从这里开始</title>
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- 自定义样式 -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
 </head>
 <body>
-    <!-- 顶部导航 -->
+
+    <!-- 头部 -->
     <header class="header">
-       <div class="topbar">
-    <div class="container topbar-inner">
-        <div class="topbar-left">
-            <a href="#">设为主页</a>
-            <a href="#">加入收藏</a>
+        <div class="header-inner">
+            <h1 class="site-title">
+                <i class="fas fa-sun" style="color: #fbbf24; margin-right: 10px;"></i>
+                美好的一天从这里开始
+            </h1>
+            <p class="site-subtitle">✨ 收藏你喜爱的网站 · 一键直达</p>
         </div>
-        <div class="topbar-center" id="topDate">2026年8月25日 丙午年 七月十三 星期二 15:50</div>
-        <div class="topbar-right">
-            <a href="#">个性设置</a>
-            <a href="#">意见反馈</a>
-        </div>
-    </div>
-</div>
-
-<!-- ===== 主头部（Logo + 天气 + 邮箱） ===== -->
-<header class="header">
-    <div class="container header-inner">
-        <div class="logo">
-            <span class="logo-icon">🌿</span>
-            <span class="logo-text">清新导航</span>
-        </div>
-        <div class="header-weather">
-            <span>📍 连江</span>
-            <span>空气质量 优</span>
-            <span>25~28℃</span>
-        </div>
-        <div class="header-login">
-            <input type="text" placeholder="邮箱" />
-            <input type="password" placeholder="密码" />
-            <button>登录</button>
-        </div>
-    </div>
-</header>
-
-<!-- ===== 搜索区域（带更多标签） ===== -->
-<section class="search-section">
-    <div class="container">
-        <div class="search-box">
-            <!-- 搜索类型标签（可隐藏，但为仿hao268可保留） -->
-            <div class="search-tags">
-                <span class="active">网页</span>
-                <span>MP3</span>
-                <span>视频</span>
-                <span>图片</span>
-                <span>贴吧</span>
-                <span>知道</span>
-                <span>新闻</span>
-                <span>地图</span>
-                <span>更多</span>
-            </div>
-            <!-- 双引擎搜索表单（保留） -->
-            <div class="search-tabs">
-                <button class="search-tab active" data-engine="baidu">百度</button>
-                <button class="search-tab" data-engine="google">Google</button>
-            </div>
-            <form class="search-form" id="searchForm">
-                <input type="text" class="search-input" id="searchInput" placeholder="搜索你想要的…" autofocus />
-                <button type="submit" class="search-btn">百度一下</button>
-            </form>
-            <!-- 热门搜索词（保留） -->
-            <div class="search-hot">
-                <span>🔥 热门：</span>
-                <a href="https://www.baidu.com/s?wd=中国空军赴埃及训练有何影响" target="_blank">中国空军赴埃及训练有何影响</a>
-            </div>
-            <!-- ★★★ 新增：收藏网站横条 ★★★ -->
-            <div class="favorite-sites">
-                <span>收藏网站：</span>
-                <a href="https://www.jd.com" target="_blank">京东商城</a>
-                <a href="https://www.taobao.com" target="_blank">淘宝网</a>
-                <a href="https://www.chiphell.com" target="_blank">chiphell</a>
-                <!-- 您可以增删更多 -->
-            </div>
-        </div>
-    </div>
-</section>
     </header>
 
-    <!-- 搜索区域 -->
+    <!-- 搜索引擎区域 -->
     <section class="search-section">
-        <div class="container">
+        <div class="search-container">
+
+            <!-- 百度 -->
             <div class="search-box">
-                <div class="search-tabs">
-                    <button class="search-tab active" data-engine="baidu">百度</button>
-                    <button class="search-tab" data-engine="google">Google</button>
+                <div class="search-brand">
+                    <img src="https://www.baidu.com/favicon.ico" alt="百度" class="brand-icon" />
+                    <span class="brand-name">百度</span>
                 </div>
-                <form class="search-form" id="searchForm">
-                    <input type="text" class="search-input" id="searchInput" placeholder="搜索你想要的…" autofocus />
-                    <button type="submit" class="search-btn">🔍</button>
-                </form>
-                <div class="search-hot">
-                    <span>🔥 热门：</span>
-                    <a href="https://www.baidu.com/s?wd=天气" target="_blank">天气</a>
-                    <a href="https://www.baidu.com/s?wd=新闻" target="_blank">新闻</a>
-                    <a href="https://www.baidu.com/s?wd=电影" target="_blank">电影</a>
-                    <a href="https://www.baidu.com/s?wd=游戏" target="_blank">游戏</a>
-                    <a href="https://www.baidu.com/s?wd=科技" target="_blank">科技</a>
+                <div class="search-input-group">
+                    <input type="text" id="baiduInput" placeholder="输入关键词..." class="search-input" />
+                    <button id="baiduBtn" class="search-btn baidu-btn">
+                        <i class="fas fa-search"></i> 搜一下
+                    </button>
                 </div>
             </div>
+
+            <!-- Google -->
+            <div class="search-box">
+                <div class="search-brand">
+                    <img src="https://www.google.com/favicon.ico" alt="Google" class="brand-icon" />
+                    <span class="brand-name">Google</span>
+                </div>
+                <div class="search-input-group">
+                    <input type="text" id="googleInput" placeholder="输入关键词..." class="search-input" />
+                    <button id="googleBtn" class="search-btn google-btn">
+                        <i class="fas fa-search"></i> 搜一下
+                    </button>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- 导航分类 -->
-    <main class="main">
-        <div class="container">
-            <div class="categories">
-                <!-- 8个卡片，内容与您截图一致 -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">🛠️</span>
-                        <h2 class="category-title">常用工具</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://www.baidu.com" target="_blank">百度</a></li>
-                        <li><a href="https://www.google.com" target="_blank">Google</a></li>
-                        <li><a href="https://www.zhihu.com" target="_blank">知乎</a></li>
-                        <li><a href="https://www.douban.com" target="_blank">豆瓣</a></li>
-                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.bing.com" target="_blank">Bing</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">💬</span>
-                        <h2 class="category-title">社交媒体</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://weibo.com" target="_blank">微博</a></li>
-                        <li><a href="https://www.qq.com" target="_blank">QQ</a></li>
-                        <li><a href="https://www.douyin.com" target="_blank">抖音</a></li>
-                        <li><a href="https://www.xiaohongshu.com" target="_blank">小红书</a></li>
-                        <li><a href="https://www.weixin.qq.com" target="_blank">微信</a></li>
-                        <li><a href="https://www.bilibili.com" target="_blank">B站</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">🎬</span>
-                        <h2 class="category-title">视频娱乐</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a></li>
-                        <li><a href="https://www.iqiyi.com" target="_blank">爱奇艺</a></li>
-                        <li><a href="https://v.qq.com" target="_blank">腾讯视频</a></li>
-                        <li><a href="https://www.youku.com" target="_blank">优酷</a></li>
-                        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
-                        <li><a href="https://www.mgtv.com" target="_blank">芒果TV</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">📰</span>
-                        <h2 class="category-title">新闻资讯</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://news.sina.com.cn" target="_blank">新浪新闻</a></li>
-                        <li><a href="https://news.163.com" target="_blank">网易新闻</a></li>
-                        <li><a href="https://news.qq.com" target="_blank">腾讯新闻</a></li>
-                        <li><a href="https://www.toutiao.com" target="_blank">今日头条</a></li>
-                        <li><a href="https://www.thepaper.cn" target="_blank">澎湃新闻</a></li>
-                        <li><a href="https://www.caixin.com" target="_blank">财新网</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">🛒</span>
-                        <h2 class="category-title">购物生活</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://www.taobao.com" target="_blank">淘宝</a></li>
-                        <li><a href="https://www.jd.com" target="_blank">京东</a></li>
-                        <li><a href="https://www.pinduoduo.com" target="_blank">拼多多</a></li>
-                        <li><a href="https://www.meituan.com" target="_blank">美团</a></li>
-                        <li><a href="https://www.ele.me" target="_blank">饿了么</a></li>
-                        <li><a href="https://www.suning.com" target="_blank">苏宁易购</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">📚</span>
-                        <h2 class="category-title">学习办公</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://www.wps.cn" target="_blank">WPS Office</a></li>
-                        <li><a href="https://wenku.baidu.com" target="_blank">百度文库</a></li>
-                        <li><a href="https://www.csdn.net" target="_blank">CSDN</a></li>
-                        <li><a href="https://www.jianshu.com" target="_blank">简书</a></li>
-                        <li><a href="https://www.icourse163.org" target="_blank">中国大学MOOC</a></li>
-                        <li><a href="https://www.runoob.com" target="_blank">菜鸟教程</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">💰</span>
-                        <h2 class="category-title">金融理财</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://www.eastmoney.com" target="_blank">东方财富</a></li>
-                        <li><a href="https://www.sse.com.cn" target="_blank">上交所</a></li>
-                        <li><a href="https://www.szse.cn" target="_blank">深交所</a></li>
-                        <li><a href="https://www.jrj.com.cn" target="_blank">金融界</a></li>
-                        <li><a href="https://www.cnstock.com" target="_blank">中国证券网</a></li>
-                        <li><a href="https://www.hexun.com" target="_blank">和讯网</a></li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <div class="category-header">
-                        <span class="category-icon">🏠</span>
-                        <h2 class="category-title">生活服务</h2>
-                    </div>
-                    <ul class="category-links">
-                        <li><a href="https://www.12306.cn" target="_blank">铁路12306</a></li>
-                        <li><a href="https://www.ctrip.com" target="_blank">携程旅行</a></li>
-                        <li><a href="https://www.qunar.com" target="_blank">去哪儿</a></li>
-                        <li><a href="https://www.dianping.com" target="_blank">大众点评</a></li>
-                        <li><a href="https://www.58.com" target="_blank">58同城</a></li>
-                        <li><a href="https://www.ganji.com" target="_blank">赶集网</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!-- 分类导航区域 -->
+    <main class="main-content">
+        <div id="categoriesContainer">
+            <!-- 由 JavaScript 动态渲染 -->
         </div>
     </main>
 
     <!-- 底部 -->
     <footer class="footer">
-        <div class="container">
-            <p class="footer-text">
-                🌿 清新导航 · 始于简洁，忠于便捷 &nbsp;|&nbsp; <span id="footerYear"></span>
-            </p>
-            <p class="footer-meta">
-                <a href="https://github.com" target="_blank">GitHub</a>
-                &nbsp;·&nbsp;
-                <a href="#" id="backTop">返回顶部 ↑</a>
-            </p>
-        </div>
+        <p>© 2026 · 自定义导航 · 数据保存在本地浏览器</p>
     </footer>
 
+    <!-- 模态框：添加 / 编辑网站 -->
+    <div id="siteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"><i class="fas fa-pen"></i> 编辑网站</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="siteForm">
+                    <input type="hidden" id="editCategoryId" />
+                    <input type="hidden" id="editSiteId" />
+
+                    <div class="form-group">
+                        <label for="siteName">网站名称 <span class="required">*</span></label>
+                        <input type="text" id="siteName" placeholder="例如：百度" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteUrl">网址 <span class="required">*</span></label>
+                        <input type="url" id="siteUrl" placeholder="https://www.baidu.com" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteIcon">图标（可选）</label>
+                        <div class="icon-input-hint">
+                            <input type="text" id="siteIcon" placeholder="留空自动获取 favicon，或输入 emoji / 文字" />
+                            <span class="hint-text"><i class="fas fa-info-circle"></i> 例如：🔥 或 百</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="modalCancel">取消</button>
+                        <button type="submit" class="btn btn-primary" id="modalSubmit">
+                            <i class="fas fa-save"></i> 保存
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 删除确认弹窗 -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content" style="max-width: 420px;">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle" style="color: #ef4444;"></i> 确认删除</h3>
+                <button class="modal-close" id="deleteModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="deleteConfirmMsg">确定要删除该网站吗？</p>
+                <div class="form-actions" style="justify-content: center; gap: 16px;">
+                    <button type="button" class="btn btn-secondary" id="deleteCancel">取消</button>
+                    <button type="button" class="btn btn-danger" id="deleteConfirm">
+                        <i class="fas fa-trash"></i> 删除
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 主逻辑 -->
     <script src="js/main.js"></script>
 </body>
 </html>
