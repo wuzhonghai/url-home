@@ -27,7 +27,7 @@ const DEFAULT_DATA = {
             sites: [
                 { id: 's11', name: 'youtube', url: 'https://www.youtube.com', icon: '' },
                 { id: 's12', name: '哔哩哔哩', url: 'https://www.bilibili.com', icon: '' },
-                { id: 's13', name: '掘金', url: 'https://juejin.cn', icon: '' },
+                { id: 's13', name: 'deepseek', url: 'https://chat.deepseek.com/', icon: '' },
                 { id: 's14', name: 'CSDN', url: 'https://www.csdn.net', icon: '' },
                 { id: 's15', name: '思否', url: 'https://segmentfault.com', icon: '' },
                 { id: 's16', name: '少数派', url: 'https://sspai.com', icon: '' },
@@ -57,9 +57,9 @@ const DEFAULT_DATA = {
             id: 'cat-4',
             name: '其他网站',
             sites: [
-                { id: 's31', name: '淘宝', url: 'https://www.taobao.com', icon: '' },
-                { id: 's32', name: '京东', url: 'https://www.jd.com', icon: '' },
-                { id: 's33', name: '亚马逊', url: 'https://www.amazon.cn', icon: '' },
+                { id: 's31', name: '12306', url: 'https://www.12306.com', icon: '' },
+                { id: 's32', name: 'cloudflare', url: 'https://dash.cloudflare.com/', icon: '' },
+                { id: 's33', name: 'softoroom', url: 'https://softoroom.org/', icon: '' },
                 { id: 's34', name: '拼多多', url: 'https://www.pinduoduo.com', icon: '' },
                 { id: 's35', name: '美团', url: 'https://www.meituan.com', icon: '' },
                 { id: 's36', name: '饿了么', url: 'https://www.ele.me', icon: '' },
