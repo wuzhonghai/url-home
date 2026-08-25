@@ -25,7 +25,7 @@ const DEFAULT_DATA = {
             id: 'cat-2',
             name: '常用网站',
             sites: [
-                { id: 's11', name: 'Reddit', url: 'https://www.reddit.com', icon: '' },
+                { id: 's11', name: 'youtube', url: 'https://www.youtube.com', icon: '' },
                 { id: 's12', name: 'V2EX', url: 'https://www.v2ex.com', icon: '' },
                 { id: 's13', name: '掘金', url: 'https://juejin.cn', icon: '' },
                 { id: 's14', name: 'CSDN', url: 'https://www.csdn.net', icon: '' },
@@ -41,8 +41,8 @@ const DEFAULT_DATA = {
             id: 'cat-3',
             name: '生活服务',
             sites: [
-                { id: 's21', name: 'MDN Web Docs', url: 'https://developer.mozilla.org', icon: '' },
-                { id: 's22', name: 'W3School', url: 'https://www.w3schools.com', icon: '' },
+                { id: 's21', name: '京东商城', url: 'https://www.jd.com', icon: '' },
+                { id: 's22', name: '淘宝网', url: 'https://www.taobao.com', icon: '' },
                 { id: 's23', name: '菜鸟教程', url: 'https://www.runoob.com', icon: '' },
                 { id: 's24', name: 'B站', url: 'https://www.bilibili.com', icon: '' },
                 { id: 's25', name: '网易云课堂', url: 'https://study.163.com', icon: '' },
