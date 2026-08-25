@@ -10,8 +10,8 @@ const DEFAULT_DATA = {
             name: '社区资讯',
             sites: [
                 { id: 's1', name: 'chiphell', url: 'https://www.chiphell.com', icon: '' },
-                { id: 's2', name: 'Google', url: 'https://www.google.com', icon: '' },
-                { id: 's3', name: 'Bing', url: 'https://www.bing.com', icon: '' },
+                { id: 's2', name: '恩山无线论坛', url: 'https://www.right.com.cn', icon: '' },
+                { id: 's3', name: '远景论坛', url: 'https://www.pcbeta.com', icon: '' },
                 { id: 's4', name: 'GitHub', url: 'https://github.com', icon: '' },
                 { id: 's5', name: 'Stack Overflow', url: 'https://stackoverflow.com', icon: '' },
                 { id: 's6', name: '知乎', url: 'https://www.zhihu.com', icon: '' },
@@ -26,7 +26,7 @@ const DEFAULT_DATA = {
             name: '常用网站',
             sites: [
                 { id: 's11', name: 'youtube', url: 'https://www.youtube.com', icon: '' },
-                { id: 's12', name: 'V2EX', url: 'https://www.v2ex.com', icon: '' },
+                { id: 's12', name: '哔哩哔哩', url: 'https://www.bilibili.com', icon: '' },
                 { id: 's13', name: '掘金', url: 'https://juejin.cn', icon: '' },
                 { id: 's14', name: 'CSDN', url: 'https://www.csdn.net', icon: '' },
                 { id: 's15', name: '思否', url: 'https://segmentfault.com', icon: '' },
@@ -43,9 +43,9 @@ const DEFAULT_DATA = {
             sites: [
                 { id: 's21', name: '京东商城', url: 'https://www.jd.com', icon: '' },
                 { id: 's22', name: '淘宝网', url: 'https://www.taobao.com', icon: '' },
-                { id: 's23', name: '菜鸟教程', url: 'https://www.runoob.com', icon: '' },
-                { id: 's24', name: 'B站', url: 'https://www.bilibili.com', icon: '' },
-                { id: 's25', name: '网易云课堂', url: 'https://study.163.com', icon: '' },
+                { id: 's23', name: '携程旅行', url: 'https://www.ctrip.com', icon: '' },
+                { id: 's24', name: '建设银行', url: 'https://www.ccb.com', icon: '' },
+                { id: 's25', name: '中国银行', url: 'https://www.boc.cn', icon: '' },
                 { id: 's26', name: 'Coursera', url: 'https://www.coursera.org', icon: '' },
                 { id: 's27', name: 'edX', url: 'https://www.edx.org', icon: '' },
                 { id: 's28', name: 'Khan Academy', url: 'https://www.khanacademy.org', icon: '' },
