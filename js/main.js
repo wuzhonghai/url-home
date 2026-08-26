@@ -275,8 +275,8 @@ siteForm.addEventListener('submit', function(e) {
             site.icon = icon;
         }
     } else {
-        if (category.sites.length >= 10) {
-            alert('每个分类最多只能添加 10 个网站！');
+        if (category.sites.length >= 8) {
+            alert('每个分类最多只能添加 8 个网站！');
             return;
         }
         category.sites.push({ id: generateId(), name, url, icon });
