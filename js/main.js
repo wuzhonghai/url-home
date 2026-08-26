@@ -13,7 +13,7 @@ const DEFAULT_DATA = {
                 { id: 's2', name: '恩山无线论坛', url: 'https://www.right.com.cn', icon: '' },
                 { id: 's3', name: '远景论坛', url: 'https://www.pcbeta.com', icon: '' },
                 { id: 's4', name: 'GitHub', url: 'https://github.com', icon: '' },
-                { id: 's5', name: 'Stack Overflow', url: 'https://stackoverflow.com', icon: '' },
+                { id: 's5', name: 'ExcelHome', url: 'https://www.excelhome.net', icon: '' },
                 { id: 's6', name: '知乎', url: 'https://www.zhihu.com', icon: '' },
                 { id: 's7', name: '微博', url: 'https://weibo.com', icon: '' },
                 { id: 's8', name: '腾讯网', url: 'https://www.qq.com', icon: '' },
@@ -27,11 +27,11 @@ const DEFAULT_DATA = {
                 { id: 's9', name: 'youtube', url: 'https://www.youtube.com', icon: '' },
                 { id: 's10', name: '哔哩哔哩', url: 'https://www.bilibili.com', icon: '' },
                 { id: 's11', name: 'deepseek', url: 'https://chat.deepseek.com', icon: '' },
-                { id: 's12', name: 'CSDN', url: 'https://www.csdn.net', icon: '' },
-                { id: 's13', name: '思否', url: 'https://segmentfault.com', icon: '' },
-                { id: 's14', name: '少数派', url: 'https://sspai.com', icon: '' },
-                { id: 's15', name: '品玩', url: 'https://www.pingwest.com', icon: '' },
-                { id: 's16', name: '虎嗅', url: 'https://www.huxiu.com', icon: '' },
+                { id: 's12', name: '中学学科网', url: 'https://www.zxxk.com', icon: '' },
+                { id: 's13', name: '今日头条', url: 'https://www.toutiao.com', icon: '' },
+                { id: 's14', name: '支付宝', url: 'https://www.alipay.com', icon: '' },
+                { id: 's15', name: 'MSDN，我告诉你', url: 'https://msdn.itellyou.cn', icon: '' },
+                { id: 's16', name: '异次元软件世界', url: 'https://www.iplaysoft.com/', icon: '' },
                 
             ]
         },
@@ -44,9 +44,9 @@ const DEFAULT_DATA = {
                 { id: 's19', name: '携程旅行', url: 'https://www.ctrip.com', icon: '' },
                 { id: 's20', name: '建设银行', url: 'https://www.ccb.com', icon: '' },
                 { id: 's21', name: '中国银行', url: 'https://www.boc.cn', icon: '' },
-                { id: 's22', name: 'Coursera', url: 'https://www.coursera.org', icon: '' },
-                { id: 's23', name: 'edX', url: 'https://www.edx.org', icon: '' },
-                { id: 's24', name: 'Khan Academy', url: 'https://www.khanacademy.org', icon: '' },
+                { id: 's22', name: '央视网', url: 'https://www.cctv.com', icon: '' },
+                { id: 's23', name: '美食天下', url: 'https://www.meishichina.com', icon: '' },
+                { id: 's24', name: '下厨房', url: 'https://www.xiachufang.com', icon: '' },
                 
             ]
         },
@@ -58,9 +58,9 @@ const DEFAULT_DATA = {
                 { id: 's26', name: 'cloudflare', url: 'https://dash.cloudflare.com/', icon: '' },
                 { id: 's27', name: 'softoroom', url: 'https://softoroom.org/', icon: '' },
                 { id: 's28', name: 'officeplus', url: 'https://www.officeplus.cn', icon: '' },
-                { id: 's29', name: '美团', url: 'https://www.meituan.com', icon: '' },
+                { id: 's29', name: '58同城', url: 'https://fz.58.com', icon: '' },
                 { id: 's30', name: '饿了么', url: 'https://www.ele.me', icon: '' },
-                { id: 's31', name: '携程', url: 'https://www.ctrip.com', icon: '' },
+                { id: 's31', name: '什么值得买', url: 'https://post.smzdm.com/', icon: '' },
                 { id: 's32', name: '马蜂窝', url: 'https://www.mafengwo.cn', icon: '' },
                 
             ]
